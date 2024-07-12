@@ -7,5 +7,6 @@ on:
 jobs:
   deploy-web:
     runs-on: ubuntu-latest
+    if: ${{ github.event.pull_request.merged }}
     steps:
       - run: echo "Trigger deployment workflow when pull request to main branch"
