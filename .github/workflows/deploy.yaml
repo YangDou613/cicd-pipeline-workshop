@@ -11,4 +11,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - run: echo "User name from secrets - ${{ secrets.USER_NAME }}"
-    - run: echo "User name from variables - ${{ variables.USER_NAME }}"
+    - run: echo "User name from variables - ${{ vars.USER_NAME }}"
