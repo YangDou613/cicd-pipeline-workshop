@@ -1,3 +1,5 @@
+# Hi
+
 # Simple Web
 
 Just for CICD pipeline workshop
