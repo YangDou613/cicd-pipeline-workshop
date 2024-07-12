@@ -7,7 +7,7 @@ on:
 
 jobs:
   deploy-web:
+    if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
-    if: ${{ github.event.pull_request.merged }}
     steps:
-      - run: echo "Trigger deployment workflow when pull request to main branch"
+    - run: echo "User name - ${{ secrets.USER_NAME }}"
