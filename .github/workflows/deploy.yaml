@@ -7,8 +7,7 @@ on:
 
 jobs:
   deploy-web:
-    if_merged:
-      if: github.event.pull_request.merged == true
-      runs-on: ubuntu-latest
-      steps:
-      - run: echo "User name: ${{ secrets.USER_NAME }}"
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+    steps:
+    - run: echo "User name: ${{ secrets.USER_NAME }}"
