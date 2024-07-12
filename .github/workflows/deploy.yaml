@@ -10,5 +10,14 @@ jobs:
     if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     steps:
-    - run: echo "User name from secrets - ${{ secrets.USER_NAME }}"
-    - run: echo "User name from variables - ${{ vars.USER_NAME }}"
+    - name: deploy to ec2
+      uses: appleboy/ssh-action@v1.0.3
+      with:
+        host: ${{ secrets.EC2_HOST }}
+        username: ${{ secrets.EC2_USERNAME }}
+        key: ${{ secrets.EC2_KEY }}
+        port: ${{ secrets.EC2_PORT }}
+	script: |
+          cd /home/ubuntu/cicd-pipeline-workshop
+          git pull
+          pm2 restart src/server.js
