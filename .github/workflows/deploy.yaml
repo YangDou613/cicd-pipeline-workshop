@@ -10,4 +10,4 @@ jobs:
     runs-on: ubuntu-latest
     if: ${{ github.event.pull_request.merged }}
     steps:
-      - run: echo "Key: ${{ secrets.KEY }}"
+      - run: echo "User name: ${{ secrets.USER_NAME }}"
